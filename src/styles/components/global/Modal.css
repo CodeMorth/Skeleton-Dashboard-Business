@@ -1,0 +1,10 @@
+.p-dialog-header,.p-dialog-content{
+
+    @apply p-0 rounded-md;
+
+}
+
+.p-dialog-header {
+    @apply w-fit absolute right-1 top-1;
+  }
+  

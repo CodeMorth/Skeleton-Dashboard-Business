@@ -1,0 +1,249 @@
+.NavBar {
+  @apply fixed w-fit z-50;
+
+  @screen laptop {
+    @apply static ;
+  }
+
+  svg {
+    @apply max-w-12 w-full h-full;
+
+    @screen laptop {
+      max-width: calc(2.3rem * var(--scale));
+    }
+  }
+
+  h3,
+  h2 {
+    @apply text-lg;
+
+    @screen tablet {
+      @apply text-xl text-center;
+    }
+
+    @screen laptop {
+      font-size: calc(1.1rem * var(--scale));
+      min-width: calc(6.5rem * var(--scale));
+      max-width: calc(7.8rem * var(--scale));
+      line-height: calc(1.5rem * var(--scale));
+    }
+  }
+
+  .image-container-menu {
+    @apply absolute w-14 left-3 top-3 cursor-pointer;
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  .navbar-container {
+    @apply flex flex-col gap-4 overflow-hidden bg-[#F3F3F3];
+
+    transition: 0.4s ease-in-out;
+
+    @screen laptop {
+      @apply bg-transparent;
+      gap: calc(1.4rem * var(--scale));
+      /* padding-top: calc(1rem * var(--scale)); */
+      padding-left: calc(1rem * var(--scale));
+    }
+  }
+
+  .navbar-container.open {
+    @apply w-72;
+
+    @screen laptop {
+      @apply w-full;
+    }
+  }
+  .navbar-container.close {
+    @apply w-0;
+
+    @screen laptop {
+      @apply w-full;
+    }
+  }
+
+  .container-top {
+    @apply text-blue-own items-center;
+
+    @screen laptop {
+      /* height: calc(6rem * var(--scale)); */
+      padding: calc(1.3rem * var(--scale));
+      gap: calc(0.5rem * var(--scale));
+    }
+  }
+
+  .container-top,
+  .container-bottom {
+    @apply flex flex-col w-72 justify-center bg-white-own py-6 px-5;
+
+    @screen laptop {
+      width: calc(17rem * var(--scale));
+    }
+  }
+
+  img {
+    @screen laptop {
+      @apply w-full h-full;
+    }
+  }
+  .image-container-perfil {
+    @apply rounded-full border-[#0F59D6] border-[0.2rem] overflow-hidden w-12 h-12;
+
+    @screen laptop {
+      width: calc(3rem * var(--scale));
+      height: calc(3rem * var(--scale));
+      padding: calc(0.3rem * var(--scale));
+    }
+  }
+
+  .container-bottom {
+    @apply flex gap-3 flex-col justify-start;
+
+    @screen laptop {
+      @apply flex flex-col justify-start h-full;
+      /* min-height: calc(40rem * var(--scale)); */
+      gap: calc(1rem * var(--scale));
+    }
+
+    h1 {
+      @apply text-[1.4rem] font-extrabold;
+
+      @screen laptop {
+        font-size: calc(2rem * var(--scale));
+      }
+    }
+  }
+
+  .request-title {
+    @apply text-blue-own flex justify-between font-extrabold text-[1.4rem];
+
+    @screen laptop {
+      font-size: calc(2rem * var(--scale));
+      /* padding-left: calc(1rem * var(--scale));
+      padding-right: calc(1rem * var(--scale)); */
+    }
+  }
+
+  .image-container {
+    @apply w-11 h-auto overflow-hidden;
+
+    @screen laptop {
+      min-width: calc(1.5rem * var(--scale));
+    }
+
+    img {
+      @apply h-auto;
+
+      @screen laptop {
+        min-width: calc(2rem * var(--scale));
+      }
+    }
+  }
+
+  .option-container {
+    @apply bg-[#EAEAEB] w-full rounded-xl h-20 gap-4 px-5 text-blue-own flex mx-auto justify-between items-center text-center font-extrabold z-50;
+    transition: 0.2s ease-in-out;
+
+    @screen laptop {
+      @apply flex mx-auto gap-0 justify-between items-center text-center font-extrabold;
+      height: calc(4.4rem * var(--scale));
+      width: calc(13rem * var(--scale));
+      padding: calc(0.3rem * var(--scale));
+      border-radius: calc(1rem * var(--scale));
+      padding-left: calc(0.9rem * var(--scale));
+      padding-right: calc(0.9rem * var(--scale));
+    }
+  }
+
+  .option-container:hover {
+    @apply bg-hover-color;
+  }
+
+  .option-container-special {
+    @apply gap-0 w-full text-sm py-2;
+
+    @screen laptop {
+      @apply flex mx-auto h-auto items-center text-center font-extrabold justify-between text-base;
+      width: calc(13rem * var(--scale));
+      padding: calc(0.3rem * var(--scale));
+      border-radius: calc(1rem * var(--scale));
+      padding-left: calc(0.9rem * var(--scale));
+      padding-right: calc(0.9rem * var(--scale));
+      padding-top: calc(0.9rem * var(--scale));
+      padding-bottom: calc(0.9rem * var(--scale));
+    }
+  }
+
+  .option-container-child {
+    @apply w-11/12 min-h-16 ml-auto mr-0 !-z-50;
+
+    @screen laptop {
+      min-height: calc(4.1rem * var(--scale));
+    }
+  }
+
+  .process-child-container1 {
+    @apply flex flex-col gap-3 h-auto z-50 bg-white-own;
+
+    transition: 0.4s ease;
+
+    @screen laptop {
+      gap: calc(1rem * var(--scale));
+      margin-right: calc(-1rem * var(--scale));
+    }
+  }
+
+  .process-child-container1.open {
+    @apply w-full h-44 mt-0;
+
+    @screen laptop {
+      height: calc(10rem * var(--scale));
+      margin-left: calc(1rem * var(--scale));
+      margin-right: calc(-1rem * var(--scale));
+    }
+  }
+
+  .process-child-container1.close {
+    @apply h-0 -mt-3 overflow-hidden;
+
+    @screen laptop {
+      height: 0rem;
+      margin-top: calc(-1rem * var(--scale));
+      margin-left: calc(0rem * var(--scale));
+    }
+  }
+
+  .process-child-container2 {
+    @apply flex flex-col gap-3 h-auto z-50 bg-white-own;
+
+    transition: 0.4s ease;
+
+    @screen laptop {
+      gap: calc(1rem * var(--scale));
+      margin-right: calc(-1rem * var(--scale));
+    }
+  }
+
+  .process-child-container2.open {
+    @apply w-full h-20 mt-0;
+
+    @screen laptop {
+      height: calc(4.5rem * var(--scale));
+      margin-left: calc(1rem * var(--scale));
+      margin-right: calc(-1rem * var(--scale));
+    }
+  }
+
+  .process-child-container2.close {
+    @apply h-0 -mt-3 overflow-hidden;
+
+    @screen laptop {
+      height: 0rem;
+      margin-top: calc(-1rem * var(--scale));
+      margin-left: calc(0rem * var(--scale));
+    }
+  }
+}

@@ -1,0 +1,83 @@
+html {
+  @apply bg-[#F3F3F3] h-full;
+}
+
+body{
+
+  @apply h-full ;
+
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra lateral */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #00171f; /* Color de fondo de la pista */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00a0dc; /* Color del pulgar de la barra */
+  border-radius: 5px; /* Radio de borde del pulgar de la barra */
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dashboard-layout {
+
+  @apply h-full ;
+
+  @screen laptop {
+  @apply h-[86%] ;
+
+    @apply flex;
+  }
+}
+
+.main-page {
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Loader-General {
+  @apply w-full h-full bg-white-own absolute flex justify-center items-center;
+}
+
+.loader {
+  @apply w-28 aspect-square grid;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 18px 18px;
+  animation: l12 1s infinite;
+}
+.loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 12px 12px;
+  animation-timing-function: linear;
+}
+
+@keyframes l12 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}

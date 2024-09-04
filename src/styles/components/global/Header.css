@@ -1,0 +1,199 @@
+.Header {
+  @apply fixed right-0 flex flex-col items-end w-auto h-fit z-50;
+
+  @screen laptop {
+    @apply static;
+    margin-bottom: calc(1rem * var(--scale));
+  }
+
+  svg {
+    @apply w-full h-full;
+  }
+
+  .header-container {
+    @apply gap-7 pt-20 pb-4 px-3 flex flex-col items-end overflow-hidden bg-white-own;
+
+    transition: 0.4s ease-in-out;
+
+    @screen laptop {
+      @apply w-full flex flex-row justify-between items-center border-b-[#0F59D6] border-[0.2rem];
+      padding-top: calc(1rem * var(--scale));
+      padding-bottom: calc(1rem * var(--scale));
+      padding-left: calc(8rem * var(--scale));
+      padding-right: calc(1rem * var(--scale));
+    }
+  }
+
+  .header-container.open {
+    @apply w-40;
+
+    @screen laptop {
+      @apply w-full;
+    }
+  }
+  .header-container.close {
+    @apply px-0 w-0;
+
+    @screen laptop {
+      @apply w-full;
+    }
+  }
+
+  img {
+    @screen laptop {
+      @apply w-full h-full;
+    }
+  }
+
+  .image-container-own {
+    @apply w-32;
+
+    @screen laptop {
+      @apply h-auto;
+
+      width: calc(2.9rem * var(--scale));
+    }
+  }
+
+  .mid-container {
+    @apply flex flex-col w-16 gap-7;
+
+    @screen laptop {
+      @apply flex flex-row justify-start items-center;
+      gap: calc(1rem * var(--scale));
+      width: calc(17.5rem * var(--scale));
+    }
+
+    .image-container {
+      @apply w-16;
+
+      @screen laptop {
+        width: calc(3rem * var(--scale));
+        height: calc(3rem * var(--scale));
+      }
+    }
+  }
+
+  .right-container {
+    @apply flex flex-col gap-7;
+
+    @screen laptop {
+
+      @apply flex-row ;
+
+      gap: calc(1rem * var(--scale));
+    }
+    .image-container-campaign,
+    .image-container-perfil {
+      @apply w-16 flex justify-center items-center;
+
+      @screen laptop {
+        @apply rounded-full border-[#0F59D6] border-[0.2rem] overflow-hidden;
+
+        width: calc(3rem * var(--scale));
+        height: calc(3rem * var(--scale));
+      }
+    }
+    .image-container-perfil {
+      @screen laptop {
+        padding: calc(0.3rem * var(--scale));
+      }
+    }
+  }
+
+  #nav-icon2 {
+    @apply absolute  cursor-pointer h-14 w-10 overflow-hidden right-4 top-5;
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  #nav-icon2 span {
+    @apply bg-blue-own;
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 50%;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 7px 7px 0;
+  }
+
+  #nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 7px 0 0 7px;
+  }
+
+  #nav-icon2 span:nth-child(1),
+  #nav-icon2 span:nth-child(2) {
+    top: 0px;
+  }
+
+  #nav-icon2 span:nth-child(3),
+  #nav-icon2 span:nth-child(4) {
+    top: 11px;
+  }
+
+  #nav-icon2 span:nth-child(5),
+  #nav-icon2 span:nth-child(6) {
+    top: 22px;
+  }
+
+  #nav-icon2.open span:nth-child(1),
+  #nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #nav-icon2.open span:nth-child(2),
+  #nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #nav-icon2.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(5) {
+    left: 5px;
+    top: 18px;
+  }
+
+  #nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 18px;
+  }
+}
